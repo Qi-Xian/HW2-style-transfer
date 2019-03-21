@@ -44,7 +44,7 @@ python train.py --config configs/edges2handbags_folder.yaml
 
 ![](result2/result.PNG)
 
-## 3.  比較其他方法（Comapre with other Method)
+## 3.  比較其他方法 - Pixel2Pixel （Comapre with other Method)
 
 除了BicycleGAN方法，我們也參考 [Pixel2Pixel](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
@@ -60,9 +60,11 @@ Pix2Pix框架基於GAN，既然是基於GAN框架，那麼首先先定義輸入�
 5.	batch_size = 1 or 4，為1時batch normalization 變為instance normalization
 
 Pix2Pix的損失函數為
+
 ![](function/4.png)
 
 為了做對比，同時再去訓練一個普通的GAN，即只讓D判斷是否為真實圖像。
+
 ![](function/5.png)
 
 ### 結果圖
