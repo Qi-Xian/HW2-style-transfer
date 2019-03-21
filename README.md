@@ -51,9 +51,23 @@ python train.py --config configs/edges2handbags_folder.yaml
 
 除了BicycleGAN方法，我們也參考 [Pixel2Pixel](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
+Pix2Pix框架基於GAN，既然是基於GAN框架，那麼首先先定義輸入輸出。普通的GAN接收的G部分的輸入是隨機向量，輸出是圖像；D部分接收的輸入是圖像(生成的或是真實的)，輸出是對或者錯。這樣G和D聯手就能輸出真實的圖像。
+
+但對於圖像翻譯任務來說，它的G輸入顯然應該是一張圖x，輸出當然也是一張圖y。但是D的輸入卻應該發生一些變化，因為除了要生成真實圖像之外，還要保證生成的圖像和輸入圖像是匹配的。
+
+### 訓練細節 
+1.	梯度下降，G、D交替訓練
+2.	使用Adam演算法訓練
+3.	在inference的時候，與train的時候一樣，這和傳統CNN不一樣，因為傳統上inference時dropout的實現與train時不同。
+4.	在inference的時候，使用test_batch的資料。這也和傳統CNN不一樣，因為傳統做法是使用train set的資料。
+5.	batch_size = 1 or 4，為1時batch normalization 變為instance normalization
+
+
 ![](reslut3/13.png)
 ![](reslut3/14.png)
 ![](reslut3/15.png)
 ![](reslut3/16.png)
 
-
+## Reference
+1. [style_transfer](https://github.com/gsurma/style_transfer?fbclid=IwAR2N1kEStC4fd-N_f6wrfEkdBLt967jFWrWZLBDfdpPmLCnYjrjvTfZv7QI)
+2. [fast-style-transfer](https://github.com/lengstrom/fast-style-transfer?fbclid=IwAR0r4ZoAnlc7VIK_JNq4-gU3aajppPyM52uX9wYRelfUY7t3-n-vL91pJFU)
