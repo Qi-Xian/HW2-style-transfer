@@ -37,10 +37,7 @@ python train.py --config configs/edges2handbags_folder.yaml
 ![](results/animal.jpg)
 ### Street Scene Translation
 ![](results/street.jpg)
-### Yosemite Summer to Winter Translation (HD)
-![](results/summer2winter_yosemite.jpg)
-### Example-guided Image Translation
-![](results/example_guided.jpg)
+
 
 ## 2. 多樣風格 Inference one image in multiple style
 我們參考 [BicycleGAN](https://github.com/junyanz/BicycleGAN)中的Day2night風格，實際在訓練與測試一次，詳細步驟同Training （MUNIT），結果顯示如下：
@@ -62,7 +59,13 @@ Pix2Pix框架基於GAN，既然是基於GAN框架，那麼首先先定義輸入�
 4.	在inference的時候，使用test_batch的資料。這也和傳統CNN不一樣，因為傳統做法是使用train set的資料。
 5.	batch_size = 1 or 4，為1時batch normalization 變為instance normalization
 
+Pix2Pix的損失函數為
+![](function/4.png)
 
+為了做對比，同時再去訓練一個普通的GAN，即只讓D判斷是否為真實圖像。
+![](function/5.png)
+
+### 結果圖
 ![](reslut3/13.png)
 ![](reslut3/14.png)
 ![](reslut3/15.png)
