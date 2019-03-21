@@ -14,7 +14,7 @@ conda install -y -c anaconda pip;
 conda install -y -c anaconda pyyaml;
 pip install tensorboard tensorboardX;
 ```
-## 訓練過程（Training Procedures）
+## 1. 訓練本專案結果流程（Training （MUNIT））
 ### Step1 下載資料集（Dataset）
 
 - `bash scripts/demo_train_edges2handbags.sh`  
@@ -47,3 +47,6 @@ This result is from original Github.
 ![](results/summer2winter_yosemite.jpg)
 ### Example-guided Image Translation
 ![](results/example_guided.jpg)
+
+## 2. 多樣風格 Inference one image in multiple style
+我們參考 [BicycleGAN](https://github.com/junyanz/BicycleGAN)中的Day2night風格，實際在訓練與測試一次，詳細步驟同Training （MUNIT）
