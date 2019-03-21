@@ -51,7 +51,9 @@ python train.py --config configs/edges2handbags_folder.yaml
 
 除了BicycleGAN方法，我們也參考 [Pixel2Pixel](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
-
-
+![](result3/13.png)
+![](result3/14.png)
+![](result3/15.png)
+![](result3/16.png)
 
 
