@@ -30,13 +30,7 @@ python train.py --config configs/edges2handbags_folder.yaml
 ```
  python test.py --config configs/edges2shoes_folder.yaml --input inputs/edges2shoes_edge.jpg --output_folder results/edges2shoes --checkpoint models/edges2shoes.pt --a2b 1 
  
- ```
- 
- ### Results Video
-
-This result is from original Github.
-[![](results/video.jpg)](https://youtu.be/ab64TWzWn40)
-
+ ``` 
 ### Edges to Shoes/handbags Translation
 ![](results/edges2shoes_handbags.jpg)
 ### Animal Image Translation
@@ -49,6 +43,7 @@ This result is from original Github.
 ![](results/example_guided.jpg)
 
 ## 2. 多樣風格 Inference one image in multiple style
-我們參考 [BicycleGAN](https://github.com/junyanz/BicycleGAN)中的Day2night風格，實際在訓練與測試一次，詳細步驟同Training （MUNIT）
+我們參考 [BicycleGAN](https://github.com/junyanz/BicycleGAN)中的Day2night風格，實際在訓練與測試一次，詳細步驟同Training （MUNIT），結果顯示如下：
+
 ![](result2/result.PNG)
 
