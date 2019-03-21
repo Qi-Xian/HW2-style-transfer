@@ -50,5 +50,5 @@ This result is from original Github.
 
 ## 2. 多樣風格 Inference one image in multiple style
 我們參考 [BicycleGAN](https://github.com/junyanz/BicycleGAN)中的Day2night風格，實際在訓練與測試一次，詳細步驟同Training （MUNIT）
-![](result2/result.png)
+![](result2/result.PNG)
 
