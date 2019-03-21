@@ -5,3 +5,45 @@
 1.  Training （MUNIT）
 2.  Inference one image in multiple style
 3.  Compare with other method
+
+## 需先安裝如下套件: pytroch, anaconda的pip, pyyaml, tensorborad
+
+```
+conda install pytorch=0.4.1 torchvision cuda91 -c pytorch;
+conda install -y -c anaconda pip;
+conda install -y -c anaconda pyyaml;
+pip install tensorboard tensorboardX;
+```
+## 訓練過程（Training Procedures）
+### Step1 下載資料集（Dataset）
+
+- `bash scripts/demo_train_edges2handbags.sh`  
+- `bash scripts/demo_train_edges2shoes.sh` 
+- `bash scripts/demo_train_summer2winter_yosemite256.sh` 
+
+### Step2 進行訓練（Train）
+
+```
+python train.py --config configs/edges2handbags_folder.yaml
+```
+### Step3 進行訓練（Test）
+```
+ python test.py --config configs/edges2shoes_folder.yaml --input inputs/edges2shoes_edge.jpg --output_folder results/edges2shoes --checkpoint models/edges2shoes.pt --a2b 1 
+ 
+ ```
+ 
+ ### Results Video
+
+This result is from original Github.
+[![](results/video.jpg)](https://youtu.be/ab64TWzWn40)
+
+### Edges to Shoes/handbags Translation
+![](results/edges2shoes_handbags.jpg)
+### Animal Image Translation
+![](results/animal.jpg)
+### Street Scene Translation
+![](results/street.jpg)
+### Yosemite Summer to Winter Translation (HD)
+![](results/summer2winter_yosemite.jpg)
+### Example-guided Image Translation
+![](results/example_guided.jpg)
